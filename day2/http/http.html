@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ajax请求服务器数据 -->
+    <!-- 注意：跨域问题，前后端配合一起解决 -->
+    <script src="jquery.js"></script>
+    <script>
+        $.ajax({
+            type:"get",//get在请求头
+            data:{
+                name:"zz"
+            },
+            url:"http://10.3.132.2:12345",
+            success(data){
+                console.log(data);
+            }
+        })
+        // $.ajax({
+        //     type:"post",//在请求体
+        //     data:{
+        //         name:"zz"
+        //     },
+        //     url:"http://10.3.132.2:12345",
+        //     success(data){
+        //         console.log(data);
+        //     }
+        // })
+    </script>
+</body>
+</html>
