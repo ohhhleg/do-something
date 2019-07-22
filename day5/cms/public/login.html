@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/signin.css">
+</head>
+
+<body>
+    <form class="form-signin">
+        <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </form>
+    <script src="./scripts/jquery.js"></script>
+    <script>
+        $('[type="submit"]').click(() => {
+            let inputEmail = $('#inputEmail').val();
+            let inputPassword = $('#inputPassword').val();
+            $.ajax({
+                dataType:'JSON',
+                type: "POST",
+                data: {
+                    inputEmail,
+                    inputPassword
+                },
+                url: "http://localhost:3000/sign/login"
+            }).done((data) => {
+                console.log(data);
+//第1种.通过用户名查询到的数据，再做密码的判断，来验证是否登录成功
+                // console.log(data[0].psw);
+                // if(data[0].psw==inputPassword){
+                //     console.log('登录成功');
+                // }else{
+                //     console.log('失败');
+                // }
+//第2种.通过用户名和密码共同查询到的数据的返回长度，判断是否登录成功
+                if(data.length>0){
+                    console.log('登录成功');
+                }else{
+                    console.log('失败');
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>
