@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <p>{{name}}</p>
+        <!-- 属性值操作 -->
+        <p>{{arr[1]}}</p>
+        <p>{{obj.skill}}</p>
+        <p>{{age}}</p>
+        <p>{{obj.iq}}</p>
+        <!-- 支持多元运算 -->
+        <p>{{-age}}</p>
+        <p>{{obj.iq+age}}</p>
+        <p>{{obj.iq+38}}</p>
+        <p>{{age>3?2:3}}</p>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+    new Vue({
+        el:'#demo',
+        data:{
+            name:'ohhhleg',
+            arr:['sing','rap','ball'],
+            obj:{
+                skill:'ps,js,css',
+                iq:250
+            },
+            age:3
+        }
+    })
+    </script>
+</body>
+</html>
