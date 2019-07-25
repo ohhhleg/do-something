@@ -104,7 +104,7 @@ eval("/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!\r\n * Vue.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Vue = __webpack_require__(/*! ./vue */ \"./src/vue.js\");\r\nconst vm = new Vue({\r\n  //视图层\r\n  el:'#demo',\r\n  // 数据层\r\n  data:{\r\n    arr:['b1','b2',],\r\n    arr2:['xx1','xx2'],\r\n    num:0\r\n  },\r\n   //模板\r\n   template:`\r\n   <div>\r\n    <button v-for=\"(item,index) in arr\" v-text=\"item\" v-on:click=\"dd(index)\"></button>\r\n    <div v-for=\"(item,index) in arr2\" v-text=\"item\" v-show=\"num==index\"></div>\r\n   </div>`,\r\n   methods:{\r\n     dd(index){\r\n       this.num=index;\r\n     }\r\n   }\r\n})\r\nconsole.log(vm);\n\n//# sourceURL=webpack:///./src/xuanxiang.js?");
+eval("const Vue = __webpack_require__(/*! ./vue */ \"./src/vue.js\");\r\nconst vm = new Vue({\r\n  //视图层\r\n  el:'#demo',\r\n  // 数据层\r\n  data:{\r\n    arr:['b1','b2','b3','b4'],\r\n    arr2:['xx1','xx2','xx3','xx4'],\r\n    num:0\r\n  },\r\n   //模板\r\n   template:`\r\n   <div>\r\n    <button v-for=\"(item,index) in arr\" v-text=\"item\" v-on:click=\"dd(index)\" :class></button>\r\n    <div v-for=\"(item,index) in arr2\" v-text=\"item\" v-show=\"num==index\"></div>\r\n   </div>`,\r\n   methods:{\r\n     dd(index){\r\n       this.num=index;\r\n     }\r\n   }\r\n})\r\nconsole.log(vm);\n\n//# sourceURL=webpack:///./src/xuanxiang.js?");
 
 /***/ }),
 
