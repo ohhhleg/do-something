@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+            <input type="text" v-model="sreach">
+            <div v-html="computedHtml"></div>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data:{
+            sreach:"",
+            html:"ohhhleg and plankton"
+        },
+        computed:{
+            computedHtml:function(){
+                // 打成数组
+                var arr=this.html.split(this.sreach);
+                console.log(arr);
+                // 拼接成字符串
+                var str=arr.join("<span style='color:red'>"+this.sreach+"</span>");
+                console.log(str);
+                return str;
+            }
+           
+        }
+    })
+
+</script>
+
+</html>
