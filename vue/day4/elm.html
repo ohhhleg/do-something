@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <script src="./vue.js"></script>
+    <script>
+        Vue.component('my-header', {
+            //从标签属性值上面获取父组件给我的值
+            props: ['title1', 'title2', 'color1', 'color2', 'ok1', 'ok2'],
+            template: `
+        <div>
+            <header :style="{
+            backgroundColor:color1           
+            }" v-html="title1" v-show="ok1" @click="test()">
+            </header>
+
+            <header :style="{
+            backgroundColor:color2           
+            }" v-html="title2" v-show="ok2" @click="test2()">
+            </header>
+        </div>
+        `,
+            methods: {
+                test() {
+                   this.ok1=false;
+                   this.ok2=true
+                },
+                test2(){
+                    this.ok1=true;
+                    this.ok2=false
+                }
+            }
+        })
+
+        //根容器
+        new Vue({
+            el: "#demo",
+            data: {
+                title1: '首页',
+                title2: "第二页",
+                color1: 'blue',
+                color2: 'red',
+                ok1: true,
+                ok2: false,
+            },
+            template: `
+            <my-header :color1="color1" :color2="color2" :title1="title1" :title2="title2" :ok1="ok1" :ok2="ok2"></my-header>
+        `
+        })
+    </script>
+</body>
+
+</html>
