@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script src="../vue.js"></script>
+
+<!-- 使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象。 -->
+
+<script>
+      // 没有名字的，你可以定义组件的选项
+        // 定义选项，组件没初始化
+        // var myFooter = Vue.extend({
+        //     // 选项
+        //     data() {
+        //         return {
+        //             name: '第一个组件'
+        //         }
+        //     },
+        //     template: `
+        //         <div>
+        //             <p v-text="name"></p>
+        //         </div>
+        //     `
+        // })
+        //对象
+        var myFooter={
+            //选项
+            data(){
+                return{
+                    name:'第一个组件',
+                    color:'green',
+                    width:250
+                }
+            },
+            template:`
+            <div>
+                <p v-text="name" :style="{
+            backgroundColor:color ,
+            width:width+'px'          
+            }"></p>
+            </div>`
+        }
+        //选项放入一个自定义标签，并初始化
+        Vue.component('my-footer',myFooter)
+        Vue.component('my-header',{
+            //选项
+            data(){
+                return{
+                    name:'第二个组件',
+                    color:'gray',
+                    height:50
+                }
+            },
+            template:`
+            <div>
+                <p v-text="name" :style="{
+            backgroundColor:color,
+            lineHeight:height+'px'          
+            }"></p>
+            </div>`
+        });
+        new Vue({
+            el:"#demo",
+            template:`
+            <div>
+                <my-header></my-header>
+                <my-footer></my-footer>    
+            </div>`
+        })
+</script>
+</html>

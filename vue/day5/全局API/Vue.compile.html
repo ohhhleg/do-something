@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+<script src="../vue.js">
+</script>
+<script>
+// 在 render 函数中编译模板字符串。只在独立构建时有效
+    var res = Vue.compile('<div><span>{{ msg }}</span></div>')
+    console.log(res.render) 
+    var vm = new Vue({
+        el: "#demo",
+        data: {
+            msg: 'hello'
+        },
+        render: res.render  
+    })
+
+</script>
+
+</html>

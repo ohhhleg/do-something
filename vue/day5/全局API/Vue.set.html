@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<!-- 向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新属性，因为 Vue 无法探测普通的新增属性  -->
+<script src="../vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#demo",
+        template:`
+        <div>
+            <button @click="changeValue">dadada</button>
+        </div>
+        `,
+        methods:{
+            changeValue(){
+                let obj={
+                    version:Vue.version,
+                    name:'ohhhleg',
+                    skill:['ba','la','dadadada']
+                }
+                console.log(obj);
+
+                //更新对象 只要是对象或者数组，都可以用这方法来改
+                Vue.set(obj,'version','1.2.3')
+                console.log(obj);
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。 -->
+    <div id="demo"></div>
+    <img src="../nextTick.jpg" alt="">
+</body>
+<script src="../vue.js"></script>
+<script>
+    // 根据版本号来去判断,做vue的兼容
+    console.log(Vue.version);
+    var vm=new Vue({
+        el:'#demo',
+        data:{
+            version:Vue.version
+        },
+        template:`
+        <div>
+            <P v-text="version"></p>
+            <button @click="changeValue">DADADA</button>
+        </div>
+        `,
+        methods:{
+            changeValue(){
+                //M变动时，V不是立即更新
+                //M更新
+                this.version='1.2.3'
+                console.log('M:',this.version,'V:',this.$el.innerHTML);
+                this.$nextTick(function(){
+                    // 更新V
+                    //DOM更新
+                    console.log('DOM更新');
+                    console.log('M:', this.version, 'V:', this.$el.innerHTML);
+                })
+            }
+        }
+    })
+</script>
+</html>
