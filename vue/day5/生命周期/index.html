@@ -21,6 +21,7 @@
         // <div>{{name}}</div>
         // `,
         render(createElement){
+            // 虚拟DOM有
             console.log('-------reader-------');
             var vnode =createElement('div',null,this.name);
             this.vnode=vnode;
@@ -38,6 +39,7 @@
             console.log('M',this.$data);
         },
         created(){
+            
             //视图层没有
             //数据层就位了
             console.log('---------created---------');
@@ -53,6 +55,7 @@
             console.log('M',this.$data);
         },
         mounted(){
+            // 数据有，虚拟DOM有，真实DOM也有
             console.log('-----------mounted-----------');
             console.log('v',this.$el);
             console.log('M',this.$data);
