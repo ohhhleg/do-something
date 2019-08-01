@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import 'weui'
 //第三方
 //搜索
 import { Search } from 'vant';
