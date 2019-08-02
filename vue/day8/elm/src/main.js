@@ -13,27 +13,28 @@ import Home from './views/Home'
 import Detail from './views/Detail'
 //  定义路由
 const routes = [
-  { path: '/home', component: Home },
-  { path: '/detail', component: Detail },
-  // { path: '/home', component: Home }
+  {
+     path: '/home', 
+     component: Home 
+  },
+  { 
+    path: '/detail/:id/:name', 
+    component: Detail 
+  },
 ]
 // 创建 router 实例，然后传 `routes` 配置
-// 你还可以传别的配置参数, 不过先这么简单着吧。
 const router = new VueRouter({
   routes // (缩写) 相当于 routes: routes
 })
 
-
-
-// 引入路由模块
-// import router from './router'
 
 //Vue继承axios
 Vue.prototype.$axios = axios
 
 //引入vant的组件
 import Vant from './vant/index'
-Vant()
+Vant();
+
 Vue.config.productionTip = false
 
 new Vue({
