@@ -118,8 +118,8 @@ import Header from './components/header/Header.js'
 
 ReactDOM.render(
     <div>
-        {Header({title:'back'})}
-        <Header title="ham"/>
+        {/* {Header()} */}
+        <Header />
     </div>,
     document.getElementById('root'),
 );
