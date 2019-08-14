@@ -1,0 +1,26 @@
+<template name="Header">
+    <div>
+      <header onclick="{this.testClick.bind(this)}">{this.state.title}</header>
+    </div>
+</template>
+<script>
+// JS
+export default class {
+    constructor(props)	{
+        super(props)
+        this.state = {
+            title: "ohhhleg"
+        }
+    }
+    testClick(){
+        this.setstate({
+            title:"cheung"
+        })
+    }
+    componentDidMount	()	{}
+}
+</script>
+<style lang="scss">
+/* CSS */
+p {color: #58bc58;}
+</style>
