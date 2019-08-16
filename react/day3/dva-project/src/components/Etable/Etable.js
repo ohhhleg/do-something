@@ -144,7 +144,7 @@ export default class EditableTable extends React.Component {
         this.setState({
             dataSource: data
         })
-        // console.log(data)
+        console.log(data)
     }
 
     handleDelete = key => {
