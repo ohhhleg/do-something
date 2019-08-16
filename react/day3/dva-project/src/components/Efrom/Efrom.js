@@ -23,7 +23,7 @@ class DynamicRule extends React.Component {
     });
     let { nickname, username } = this.props.form.getFieldsValue()
     let body = `name=${nickname}&problem=${username}`
-    let data = await request('http://localhost:3000/list/insertProblem', {
+    let data = await request('http://localhost:3000/plusProblem', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
