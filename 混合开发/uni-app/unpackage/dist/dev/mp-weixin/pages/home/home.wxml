@@ -1,0 +1,1 @@
+<view><text>{{title}}</text><input data-event-opts="{{[['input',[['__set_model',['','title','$event',[]]]]]]}}" value="{{title}}" bindinput="__e"/></view>

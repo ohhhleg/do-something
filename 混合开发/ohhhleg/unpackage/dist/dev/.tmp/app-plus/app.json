@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/news/news",
+    "pages/tabbar/tabbar",
+    "pages/components/waterfall/waterfall"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "backgroundColor": "#F8F8F8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "index"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "home"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "news"
+      },
+      {
+        "pagePath": "pages/tabbar/tabbar",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "tabbar"
+      }
+    ]
+  },
+  "nvueCompiler": "weex",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "ohhhleg",
+  "compilerVersion": "2.2.2",
+  "usingComponents": {}
+}

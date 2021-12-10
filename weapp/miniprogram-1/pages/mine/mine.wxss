@@ -1,0 +1,4 @@
+#myAudio {
+margin: 5rpx 15rpx;
+width: 100%;
+}

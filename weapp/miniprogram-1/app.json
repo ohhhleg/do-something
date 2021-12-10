@@ -1,0 +1,33 @@
+{
+  "usingComponents": {
+    "van-search": "./miniprogram_npm/vant-weapp/search/index"
+  },
+
+  "pages": [
+      "pages/home/home",
+    "pages/mine/mine",
+    "pages/camera/camera",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fd5b78",
+    "navigationBarTitleText": "blah blah blah blah",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "home",
+      "iconPath": "./imgs/home.png",
+      "selectedIconPath": "./imgs/home_select.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "mine",
+      "iconPath": "./imgs/home.png",
+      "selectedIconPath": "./imgs/home_select.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

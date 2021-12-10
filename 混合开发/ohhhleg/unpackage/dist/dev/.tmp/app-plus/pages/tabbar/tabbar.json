@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "tabbar",
+  "usingComponents": {
+    "media-item": "/pages/tabbar/news-item"
+  }
+}

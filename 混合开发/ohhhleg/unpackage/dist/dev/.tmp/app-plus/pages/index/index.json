@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "ohhhleg",
+  "usingComponents": {
+    "waterfall-flow": "/pages/components/waterfall/waterfall"
+  }
+}

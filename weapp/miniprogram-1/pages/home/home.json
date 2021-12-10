@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Wheader": "../../component/Wheader/Wheader",
+    "Wgrid":"../../component/Wgrid/Wgrid"
+  }  
+}

@@ -1,0 +1,21 @@
+<!-- one -->
+<text>\n</text>
+<view class='v1' bindtap='v1'>v1
+      <view class='v2' catchtap='v2'>v2
+          <view class='v3' bindtap='v3'>v3
+          </view>
+      </view>
+</view>
+<text>\n</text>
+<!-- two -->
+<text>\n</text>
+
+<view id="outer" bindtap="out">
+         outer
+    <view id="middle" bindtap="middle">
+         middle
+       <view id="inner" bindtap="inner">
+          inner
+       </view>
+   </view>
+</view>
